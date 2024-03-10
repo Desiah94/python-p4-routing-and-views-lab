@@ -13,7 +13,8 @@ def print_string(param):
 
 @app.route('/count/<int:param>')
 def count(param):
-    numbers = '\n'.join(str(i) for i in range(1, param + 1))  # Start from 1
+    numbers = '\n'.join(str(i) for i in range(param))  # Start from 0 and go up to param - 1
+    numbers += '\n'  # Add a trailing newline character
     return numbers
 
 @app.route('/math/<int:num1>/<operation>/<int:num2>')
